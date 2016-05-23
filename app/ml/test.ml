@@ -1,7 +1,8 @@
 let device_ready _ =
-  let d = Dialogs.t () in
+  let d = Cordova_dialogs.t () in
   d#alert
-    (Network_information.connection_to_str (Network_information.current ()))
+    (Cordova_network_information.connection_to_str
+    (Cordova_network_information.current ()))
     (fun () -> ())
     ();
   Js._false
